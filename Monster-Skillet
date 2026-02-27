@@ -51,4 +51,5 @@ live_loop :second_drums do
   #sample_duration calculates how long my custom song is so now my live loop waits til the song ends.
   sleep sample_duration(other_drums)
 end
+sample final_part
 
