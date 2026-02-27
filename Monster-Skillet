@@ -1,0 +1,54 @@
+use_bpm 135
+use_synth :piano
+define :main1 do
+  play :E3
+  play :A2
+  sleep 0.5
+  play :E3
+  play :A2
+  sleep 0.5
+  play :E3
+  play :A2
+  sleep 0.5
+  play :E3
+  play :A2
+  sleep 0.5
+end
+# VARIABLES TO STORE SAMPLES
+other_drums ="C:/Users/Ashley Sutton/Downloads/finaldrums.mp3"
+final_part = "C:/Users/Ashley Sutton/Downloads/finalpart.wav"
+live_loop :my_song do
+  3.times do main1
+    sleep 0.5
+    play :g2
+    play :c2
+    sleep 0.5
+    play :g2
+    play :c2
+    sleep 0.5
+  sleep 0.5 end
+  play :D3
+  play :G2
+  sleep 1
+  play :F3
+  play :B2
+  sleep 1
+  play :C3
+  play :F2
+  sleep 1
+  play :B2
+  play :E2
+  sleep 1
+end
+sleep 32
+live_loop :drums do
+  sample :drum_bass_soft
+  sleep 1
+end
+sleep 30
+live_loop :second_drums do
+  sample other_drums,amp: 1
+  #sample_duration calculates how long my custom song is so now my live loop waits til the song ends.
+  sleep sample_duration(other_drums)
+end
+
